@@ -41,7 +41,7 @@ This application includes an method on SQLAlchemy models that encodes them to di
 - `Encode`: Encodes a db object (model) that is nested within the current model - accepts other resolvers allowing customisation of the resulting data.
 - `Flatten`: Flattens an object at multiple nesting levels to a single key at the current level - useful when resolving relationships that are referenced by many objects (e.g., a grading system), but should really just flatten a single property into the current level (e.g., the grades for that system).
 
-![An image representing the transformation from nested to flattened keys](images/flatten-logic-explained.png)
+![An image representing the transformation from nested to flattened keys](../images/flatten-logic-explained.png)
 
 - `Map`: Takes a model and transforms it via the given function - useful within an `Encode` block (e.g., to combine two fields)
 - `Iterate`: Iterates over many models (e.g., a `1->many` relationship of class -> students), applying the given encoders to each instance.
@@ -61,7 +61,7 @@ This process was broken down into four steps:
 - Resolving the types, making `n` queries (where `n` is the number of unique types in the document)
 - Placing the resolved data back into the original structure, leaving the rest of the object unchanged.
 
-![An image describing the steps above visually](images/resolve-fields.png)
+![An image describing the steps above visually](../images/resolve-fields.png)
 
 ## Known Pitfalls
 
