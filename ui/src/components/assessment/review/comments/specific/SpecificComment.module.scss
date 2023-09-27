@@ -1,0 +1,28 @@
+.comment {
+    .author {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .reply {
+            color: rgb(99, 99, 99);
+
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+
+        &>*:not(:last-child) {
+            margin-right: 0.5rem;
+        }
+    }
+
+    p {
+        margin-left: 2.5rem;
+    }
+
+    &.child {
+        margin-left: 2.4rem;
+    }
+}

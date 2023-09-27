@@ -1,0 +1,41 @@
+$ABOVE_TARGET_COLOR: #0CB126;
+$BELOW_TARGET_COLOR: #DB7B23;
+$BG: rgb(252, 252, 252);
+
+
+.lessons {
+    width: 100%;
+    .header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 1rem;
+
+        span {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+    }
+
+    .lessonsList {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        
+
+        & > *:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+
+        margin: 0 2rem;
+    }
+
+    .paginationNext {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,7 @@
+$BG: rgb(252, 252, 252);
+
+.filter {
+    padding: 1rem;
+    background-color: darken($BG, 3);
+    border-radius: 0.5rem;
+}

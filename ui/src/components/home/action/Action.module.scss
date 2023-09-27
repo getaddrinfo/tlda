@@ -1,0 +1,36 @@
+$GREY: rgb(248, 248, 248);
+$BLUE: rgb(211, 236, 255);
+
+.action {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    border-radius: 0.5rem;
+    background-color: $GREY;
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .arrow {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        border-top-right-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+
+        height: 100%;
+        width: 5rem;
+        background-color: $BLUE;
+    }
+
+    & > *:not(:last-child) {
+        margin-bottom: 0.5rem;
+    }
+
+}

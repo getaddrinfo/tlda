@@ -1,0 +1,249 @@
+$BG: rgb(250, 250, 250);
+$YELLOW: rgb(242, 206, 75);
+$RED: rgb(242, 97, 75);
+
+.submitAssessmentScores {
+    margin: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .warning {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+
+        border: 2px solid $YELLOW;
+        background: lighten($YELLOW, 30);
+
+        p {
+            margin-left: 0.5rem;
+        }
+    }
+
+    .error {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+
+        border: 2px solid $RED;
+        background: lighten($RED, 30);
+
+        p {
+            margin-left: 0.5rem;
+        }
+    }
+
+    .withSidebar {
+        display: flex;
+        flex-direction: row;
+
+        table {
+            flex: 3;
+            align-self: flex-start;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+
+            tr {
+                td {
+                    padding: 0.5rem;
+
+                    input {
+                        width: 100%;
+                    }
+
+                    &.student {
+                        width: 20rem;
+                    }
+
+                    &.mark {
+                        height: 1rem;
+                        width: 15rem;
+                    }
+
+                    &.grade {
+                        width: 5rem;
+                    }
+
+                    &.flags { 
+                        position: relative;
+
+                        .addFlag {
+                            cursor: pointer;
+                        }
+
+                        .selectFlagDropdown {
+                            display: none;
+                            position: absolute;
+                            top: 2rem;
+                            left: 0;
+
+                            z-index: 100;
+
+                            padding: 0.5rem;
+                            border-radius: 0.5rem;
+                            background-color: #fff;
+                            border: 2px solid #eee;
+
+                            &.flagOpen {
+                                display: block;
+                            }
+
+                            ul {
+                                display: flex;
+                                flex-direction: column;
+                                list-style: none;
+
+                                li {
+                                    padding: 0.5rem;
+                                    background-color: darken($BG, 2);
+                                    border-radius: 0.5rem;
+                                    cursor: pointer;
+                                }
+
+                                & > *:not(:last-child) {
+                                    margin-bottom: 0.5rem;
+                                }
+                            }
+                        }
+                    }
+
+                    &.marker { 
+                        position: relative;
+
+                        .addFlag {
+                            cursor: pointer;
+                        }
+
+                        .selectTeacherDropdown {
+                            display: none;
+                            position: absolute;
+                            top: 2rem;
+                            left: 0;
+                            width: 20rem;
+
+                            z-index: 100;
+
+                            padding: 0.5rem;
+                            border-radius: 0.5rem;
+                            background-color: #fff;
+                            border: 2px solid #eee;
+
+                            &.teacherOpen {
+                                display: block;
+                            }
+
+                            ul {
+                                display: flex;
+                                flex-direction: column;
+                                list-style: none;
+
+                                li { 
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    
+                                    padding: 0.5rem;
+                                    background-color: darken($BG, 2);
+                                    border-radius: 0.5rem;
+                                    cursor: pointer;
+                                }
+
+                                & > *:not(:last-child) {
+                                    margin-bottom: 0.5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .flag {
+                padding: 0.1rem 0.5rem;
+                background-color: darken($BG, 5);
+
+                button {
+                    margin-left: 0.5rem;
+                }
+            }
+
+            & > *:nth-child(even) {
+                background-color: $BG;
+
+                input {
+                    background-color: $BG;
+                }
+            }
+        }
+
+        .sidebar {            
+            display: flex;
+            flex: 1;
+            align-self: flex-start;
+
+            position: sticky;
+            flex-direction: column;
+            background-color: $BG;
+            padding: 1rem;
+            border-radius: 0.5rem;
+
+            .assessmentMarkProgress {
+                width: 100%;
+                transition: all 500ms ease-out;
+            }
+
+            .meta {
+                li {
+                    list-style: none;
+                }
+
+                .isFull {
+                    color: #1ab01a;
+                }
+
+                & > *:not(:last-child) {
+                    margin-bottom: 1rem;
+                }
+            }
+
+            li.submit {
+                width: 100%;
+
+                button {
+                    width: 100%;
+                }
+            }  
+
+            ul {
+                list-style: none;
+            }
+        }
+    }
+
+    & > *:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+}
+
+.notice {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

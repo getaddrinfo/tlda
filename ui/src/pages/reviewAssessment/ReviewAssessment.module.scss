@@ -1,0 +1,15 @@
+@import "../../styles/variables.scss";
+
+.reviewCompare {
+    width: 100%;
+}
+
+.validationError {
+    color: #f45151;
+}
+
+.assessments {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}

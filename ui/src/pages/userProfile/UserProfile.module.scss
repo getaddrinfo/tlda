@@ -1,0 +1,105 @@
+$DARKER: darken(rgb(251, 251, 251), 1);
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .header {
+        display: flex;
+        padding: 5rem;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .user {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .profilePicture {
+                padding: 1rem;
+                font-size: 1.5rem;
+                border-radius: 2rem;
+            }
+
+            & > *:not(:last-child) {
+                margin-right: 1rem;
+            }
+        }
+
+        .actions {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+            & > *:not(:last-child) {
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+
+    .stats {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        background-color: $DARKER;
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+
+            span {
+                font-size: 1.25rem;
+            }
+        }
+    }
+
+    .departments {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+
+        .title {
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            li {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 1rem;
+                background-color: $DARKER;
+                border-radius: 0.5rem;
+
+                .badge {
+                    display: flex;
+                    align-items: center;
+                    padding: 0.5rem 1rem;
+                    border-radius: 5rem;
+                    font-size: 0.75rem;
+
+
+                    &.lead {
+                        background-color: #cfd9ff;
+                    }
+
+                    &.member {
+                        background-color: #fff;
+                    }
+                }
+
+                & > *:not(:last-child) {
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+}

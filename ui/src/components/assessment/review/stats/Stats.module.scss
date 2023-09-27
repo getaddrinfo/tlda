@@ -1,0 +1,14 @@
+.stats {
+    display: flex;
+    flex-direction: column;
+
+    .specificStats {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 2rem;
+    }
+
+    &>*:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+}

@@ -1,0 +1,58 @@
+$BG: rgb(252, 252, 252);
+$ABOVE_TARGET_COLOR: #0CB126;
+$BELOW_TARGET_COLOR: #DB7B23;
+
+.lesson {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding: 2rem;
+    min-width: 30rem;
+    background-color: $BG;
+    border-radius: 1rem;
+
+    .lessonDetails {
+        .numStudents {
+            font-size: 1.25rem;
+        }
+
+        .teachers {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            & > *:not(:last-child) {
+                margin-right: 0.5rem;
+            }
+        }
+
+        & > *:not(:last-child) {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    .meta {
+        display: flex;
+        flex-direction: column;
+
+        justify-content: space-between;
+
+        .targets {
+            display: flex;
+            flex-direction: column;
+
+            .targetAbove {
+                color: $ABOVE_TARGET_COLOR;
+            }
+
+            .targetBelow {
+                color: $BELOW_TARGET_COLOR;
+            }
+        }
+
+        .linkTo {
+            align-self: flex-end;
+        }
+    }
+}

@@ -1,0 +1,111 @@
+$BG: rgb(249, 249, 249);
+
+.teachers {
+    padding: 1rem;
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 1rem 0rem;
+
+        form {
+            input {
+                background-color: $BG;
+                padding: 1rem;
+                border-radius: 0.5rem;
+            }
+        }
+    }
+
+    .list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        & > *:not(:last-child) {
+            margin-bottom: 1rem;
+            margin-right: 1rem;
+        }
+
+        .teacher {
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            background-color: $BG;
+            min-width: 40rem;
+
+            & > *:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+
+            .header {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+
+                .name {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;  
+                    
+                    .profilePicture {
+                        padding: 1rem;
+                        border-radius: 100rem;
+                    }
+
+                    & > *:not(:last-child) {
+                        margin-right: 1rem;
+                    }
+                }
+
+                .role {
+                    padding: 0.25rem 0.75rem;
+                    border-radius: 1rem;
+                    background-color: #a0c7ff;
+                }
+            }
+
+            .departments {
+                padding: 1rem;
+                background-color: #fff;
+                border-radius: 0.5rem;
+
+                h4 {
+                    margin-bottom: 0.5rem;
+                }
+
+                ul {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    list-style: none;
+
+                    li {
+                        padding: 0.25rem 0.5rem;
+                        border-radius: 0.25rem;
+                        background-color: $BG;
+                    }
+                }
+            }
+
+            .footer {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+
+                & > *:not(:last-child) {
+                    margin-right: 0.5rem;
+                }
+            }
+        }
+    }
+
+    .paginationNext {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}

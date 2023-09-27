@@ -1,0 +1,14 @@
+.assessment {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    padding: 1rem;
+
+    .scores {
+        margin-top: 1rem;
+
+        &>*:not(:last-child) {
+            margin-bottom: 0.5rem;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@import "../../../../styles/variables.scss";
+
+.statComparison {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: $BG;
+
+    .upTrend {
+        fill: #34cd26;
+    }
+
+    .downTrend {
+        fill: #f45151;
+    }
+}

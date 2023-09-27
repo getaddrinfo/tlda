@@ -1,0 +1,92 @@
+#!python3
+
+# must init this first
+from util.client import HTTP
+import util.assertions as assertions
+HTTP.init()
+
+import click
+import getpass
+
+from commands.department import department
+from commands.grading import grading
+from commands.user import user
+
+from util import fs, token
+
+# holds all commands that the program has
+@click.group()
+def cli():
+    pass
+
+@cli.command()
+@click.argument('email')
+def login(email):   
+    # gets input without showing
+    # the contents of the input to the user
+    password = getpass.getpass('password: ')
+
+    res = HTTP.post("/auth/login", data={
+        "email": email,
+        "password": password,
+        "expires_after": 604800
+    })
+
+    # status code 401 => invalid password
+    # status code 404 => unknown email
+    if not res.ok:
+        if res.status_code == 401:
+            click.echo("[error] invalid password", err=True)
+            return
+
+        if res.status_code == 404:
+            click.echo("[error] unknown account", err=True)
+            return
+
+    res.raise_for_status()
+    data = res.json()
+
+    fs.write(fs.WriteArgs(
+        token=data.get("token"),
+        expires_at=data.get("expires")
+    ))
+
+@cli.command()
+@assertions.logged_in
+def logout():
+    HTTP.delete("/auth/session").raise_for_status()
+    token.remove()
+
+    click.echo("OK")
+
+cli.add_command(department)
+cli.add_command(grading)
+cli.add_command(user)
+
+
+@cli.command()
+@assertions.logged_in
+def test():
+    res = HTTP.get("/users/@me")
+    
+    if not res.ok:
+        click.echo("BAD", err=True)
+        return
+
+    click.echo("OK")
+
+if __name__ == "__main__":
+    # a nice wrapper around click's
+    # echo fn to stderr
+    err = lambda x: click.echo(x, err=True)
+
+    try:
+        cli()
+    except Exception as e:
+        err("[dump] stacktrace:")
+        err(e) 
+        err("")
+        err("[error] an error occurred")
+        err("if this persists, contact the administrator")
+        err("if you are the administrator, check that the api is running and reachable")
+        err("and that you have targeted the api correctly in tlda")

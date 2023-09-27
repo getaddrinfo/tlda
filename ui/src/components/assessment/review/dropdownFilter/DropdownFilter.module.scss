@@ -1,0 +1,42 @@
+@import "../../../../styles/variables.scss";
+
+.filter {
+    position: relative;
+    input {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        background: rgb(250, 250, 250);
+    }
+
+    .dropdown {
+        position: absolute;
+        top: 3rem;
+
+        ul {
+            list-style: none;
+            background: rgb(250, 250, 250);
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+
+            li {
+                padding: 0.5rem;
+                background-color: #fff;
+                border-radius: 0.5rem;
+
+                h4 {
+                    font-family: $code;
+                }
+
+                .values {
+                    .valueList {
+                        font-family: $code;
+                    }
+                }
+            }
+
+            & > *:not(:last-child) {
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+}

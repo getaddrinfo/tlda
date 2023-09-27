@@ -1,0 +1,15 @@
+.orb {
+    padding: 0.25rem 0.75rem;
+    border-radius: 100rem;
+    font-size: 0.8rem;
+
+    &.highMark {
+        background-color: #45ad3a;
+        color: #fff;
+    }
+
+    &.lowMark {
+        background-color: #f46262;
+        color: #fff;
+    }
+}

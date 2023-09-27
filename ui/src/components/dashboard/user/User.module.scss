@@ -1,0 +1,64 @@
+.profile {
+    display: flex;
+    flex-direction: column;
+
+    .profilePicture {
+        position: relative;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 100rem;
+        cursor: pointer;
+
+        .initials {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .dropdownContent {
+        position: absolute;
+        top: 5rem;
+        right: 1rem;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+
+        display: none;
+        background-color: #f3f1f1;
+
+        &.visible {
+            display: flex;
+        }
+
+        ul {
+            list-style: none;
+            width: 10rem;
+
+            li {
+                padding: 0.5rem 1rem;
+                cursor: pointer;
+                border-radius: 0.25rem;
+
+                & > *:not(:last-child) {
+                    margin-bottom: 0.5rem;
+                }
+            }
+
+            .logout {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #fd6c6c;
+
+                // text
+                color: #fff;
+
+                // svg
+                fill: #fff;
+            }
+        }
+    }
+}
+

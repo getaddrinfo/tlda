@@ -1,0 +1,38 @@
+.fourOhFour {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    & > *:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+
+        & > *:not(:last-child) {
+            margin-bottom: 0.5rem;
+        }
+
+        & > * {
+            flex-grow: 1;
+        }
+
+        a button {
+            width: 100%;
+        }
+    }
+}

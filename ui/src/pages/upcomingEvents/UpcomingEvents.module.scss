@@ -1,0 +1,99 @@
+$GREY: rgb(248, 248, 248);
+
+
+.upcomingEvents { 
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+
+    margin-left: 4rem;
+    margin-right: 4rem;
+
+    .key {
+        flex-grow: 1;
+    }
+
+    .evt {
+        flex-grow: 3;
+    }
+
+    .section {
+        display: flex;
+        flex-direction: column;
+
+        .event {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            width: 40rem;
+            
+            background-color: $GREY;
+
+            .header {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+            }
+
+            .footer {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                list-style: none;
+                width: 100%;
+
+                li {
+                    .title {
+                        display: flex;
+                        align-items: center;
+
+                        & > *:not(:last-child) {
+                            margin-right: 0.5rem;
+                        }
+                    }
+                }
+
+                & > *:not(:last-child) {
+                    margin-right: 3rem;
+                }
+
+                .notifyMe {
+                    margin-left: auto;
+                    align-self: flex-end;
+                }
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+
+        .keyList {
+            width: 30rem;
+            & > *:not(:last-child) {
+                margin-bottom: 2rem;
+            }
+
+            .keyItem {
+                display: flex;
+                flex-direction: column;
+
+                span {
+                    font-weight: 400;
+                }
+
+                u {
+                    margin-bottom: 1rem;
+                }
+
+                p {
+                    white-space: pre-wrap;
+                }
+            }
+        }
+    }
+}

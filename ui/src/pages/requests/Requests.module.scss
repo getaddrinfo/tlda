@@ -1,0 +1,13 @@
+$BG: rgb(249, 249, 249);
+
+.requests {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+    margin: 1rem;
+
+    & > *:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+}

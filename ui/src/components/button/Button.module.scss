@@ -1,0 +1,98 @@
+@import "../../styles/variables.scss";
+
+$GHOST: rgb(170, 170, 170);
+
+.button {
+    font-weight: 600;
+    color: #fff;
+
+    transition: background-color 0.1s ease;
+
+    /* when we hover, change the cursor to pointer */
+    &:hover {
+        cursor: pointer;
+    }
+
+    /* sizes */
+    &.small {
+        padding: 0.4em 0.5rem;
+        border-radius: 0.25rem;
+    }
+
+    &.medium {
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+    }
+
+    &.large {
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+    }
+
+    /* end sizes */
+
+    /* styles */
+
+    &.filled {
+        background-color: $brand;
+
+        /* when disabled, change the background colour to grey */
+        &:disabled {
+            opacity: 0.9;
+            background-color: $GHOST;
+        }
+    }
+
+    &.outline {
+        box-shadow: 0px 0px 0px 4px $brand inset;
+        color: #000;
+        background-color: rgb(228, 228, 228);
+        
+        &:disabled {
+            opacity: 0.9;
+            box-shadow: 0px 0px 0px 4px $brand inset;
+        }
+
+        &.small {
+            box-shadow: 0px 0px 0px 1px $brand inset;
+        }
+    }
+
+    &.grey {
+        background-color: darken($GHOST, 2);
+
+        &:disabled {
+            opacity: 0.9;
+            background-color: $GHOST
+        }
+    }
+
+    &.blurple {
+        background-color: #7289da;
+
+        &:disabled {
+            background-color: $GHOST;
+            opacity: 0.9;
+            cursor: not-allowed;
+        }
+    }
+
+    /* end styles */
+
+    /* shapes */
+
+    &.pill {
+        border-radius: 100rem;
+
+        &.small {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        &.medium {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+    }
+}
+ 

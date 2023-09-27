@@ -1,0 +1,31 @@
+@import "../../../../styles/variables.scss";
+
+.score {
+    display: flex;
+    flex-direction: column;
+    background-color: $BG;
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .info {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        list-style: none;
+
+        &>*:not(:last-child) {
+            margin-right: 1rem;
+        }
+    }
+
+    &>*:not(:last-child) {
+        margin-bottom: 0.5rem;
+    }
+}

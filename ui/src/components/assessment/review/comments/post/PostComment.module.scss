@@ -1,0 +1,36 @@
+.postComment {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .meta {
+        display: flex;
+        flex-direction: column;
+
+        .replyingTo {
+            color: rgb(99, 99, 99);
+
+            .cancelReplyingTo {
+                margin-left: 0.5rem;
+                cursor: pointer;
+            }
+        }
+
+        & > * {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    .inputSection {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        input {
+            width: 100%;
+            border-radius: 0.5rem;
+            padding-left: 0.75rem;
+            background-color: darken(rgb(250, 250, 250), 2);
+        }
+    }
+}

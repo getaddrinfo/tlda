@@ -1,0 +1,44 @@
+$BLUE: rgb(160, 199, 255);
+
+.assPage {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 1rem;
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            & > *:not(:last-child) {
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    .assessments {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        list-style: none;
+
+        &>*:not(:last-child) {
+            margin-right: 2rem;
+        }
+    }
+
+    .paginationNext {
+        margin: 0 auto;
+    }
+
+    & > *:not(:last-child) {
+        margin-bottom: 1rem;
+    }
+}
